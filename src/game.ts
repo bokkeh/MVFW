@@ -63,11 +63,34 @@ const BigImage = new DynamicMedia(
   "MainScreen"
 )
 
+const water1 = new DynamicMedia(
+  new Texture("/images/blue.png"),
+  new PlaneShape(),
+  new Transform({
+    position: new Vector3(10, 2, 8),
+    rotation: Quaternion.Euler(90,90,0),
+    scale: new Vector3(20, 4, 2)
+  }),
+  "MainScreen"
+)
+
+const water2 = new DynamicMedia(
+  new Texture("/images/blue.png"),
+  new PlaneShape(),
+  new Transform({
+    position: new Vector3(8, 2, 8),
+    rotation: Quaternion.Euler(90,90,0),
+    scale: new Vector3(20, 4, 2)
+  }),
+  "MainScreen"
+)
 
 const componententities= [
   { component: "mediaComponent1", object: Small },
   { component: "mediaComponent2", object: StageImage },
   { component: "mediaComponent3", object: BigImage },
+  { component: "water1", object: water1 },
+  { component: "water2", object: water2 },
  ]
 SMService.updateMediaOnSceneLoad(componententities);
 SMService.updateMediaOnSceneEnter(componententities);
